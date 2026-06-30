@@ -11,6 +11,7 @@ import {
   scaleIn
 } from "@/lib/motion";
 import Fireflies from "@/components/Fireflies";
+import InteractiveCaseStudy from "@/components/InteractiveCaseStudy";
 import { ShieldCheck, TrendingUp, Sparkles, Briefcase } from "lucide-react";
 
 // ─── 38 Provinsi Indonesia grouped by pulau ───────────────────────────────────
@@ -229,13 +230,13 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-display-lg md:text-display-xl lg:text-[5.5rem] font-display font-bold leading-[1.05] mb-8 tracking-tight"
+              className="text-display-md md:text-display-lg lg:text-[4.5rem] font-display font-bold leading-[1.05] mb-8 tracking-tight max-w-5xl"
             >
-              Nusantara
+              Perkenalkan Seri
               <br />
               <span className="relative inline-block mt-2">
                 <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-primary to-secondary">
-                  Paham AI
+                  Punokawan AI
                 </span>
                 <span className="absolute -bottom-2 left-0 w-full h-4 bg-primary/20 blur-xl -z-10" />
               </span>
@@ -248,9 +249,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl font-medium leading-relaxed"
             >
-              Bukan sekadar mesin penjawab. Kecerdasan buatan yang dibangun di
-              atas fondasi Karsa, Cipta, Rasa, dan Karya — menyatukan kearifan
-              lokal 17.000 pulau dengan kekuatan Agentic AI.
+              <strong className="text-white">Pembantu Pintar Level Doktor</strong> Didukung Penuh oleh <span className="text-primary font-semibold">Agent GG7</span>. Empat AI Agent yang mewarisi sifat Punokawan — biar hidup, kerja, dan investasimu tidak <span className="text-accent">Tulalit</span> lagi. <strong className="text-white">No Tulalit Anymore!</strong>
             </motion.p>
 
             <motion.div
@@ -580,12 +579,10 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Semar</h3>
                 <p className="text-sm font-medium text-gold mb-3">
-                  Sehat Waras · Master Agent
+                  Sehat Waras · Health & Wellness
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Sang Orkestrator. Mengatur koordinasi semua sub-agent. Bijak
-                  dan memastikan arah solusi sesuai konteks etis &amp; tujuan
-                  utama.
+                  Pemerhati kesehatan dan teman diskusi. Sehat itu pilihan, waras itu tujuan. Siap bantu hidup lebih sehat & tenang.
                 </p>
                 <Link
                   href="/punokawan#semar"
@@ -623,11 +620,10 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Petruk</h3>
                 <p className="text-sm font-medium text-secondary mb-3">
-                  Pasar Dunia · Analyst Agent
+                  Pasar Dunia · Market Advisor
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Fokus pada analitik, riset tren, dan pengolahan data. Intuisi
-                  tajam membaca probabilitas pasar global.
+                  Ahli pantau peluang cuan global (saham, emas, dolar). Ngerti pasar biar tidak asal ikut kabar & wawasan ekonomi mumpuni.
                 </p>
                 <Link
                   href="/punokawan#petruk"
@@ -665,11 +661,10 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Gareng</h3>
                 <p className="text-sm font-medium text-primary mb-3">
-                  Ahli AI · Creative Agent
+                  AI Digital · Fast Learning
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Ide luar kotak. Spesialis copywriting, generasi konten, dan
-                  desain. Hasilnya selalu jenius dan tepat sasaran.
+                  Spesialis riset cepat, konten kreatif, dan otomatisasi. Bikin manusia jadi nggak tulalit! Ahli cari info & ide.
                 </p>
                 <Link
                   href="/punokawan#gareng"
@@ -707,11 +702,10 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Bagong</h3>
                 <p className="text-sm font-medium text-accent mb-3">
-                  Tukang Bisnis · Executor
+                  Bisnis & Strategi · Anti-Fraud
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Praktis dan lugas. Eksekutor andal yang langsung bertindak
-                  tanpa basa-basi. Cocok untuk automasi dan optimasi sistem.
+                  Ahli strategi bisnis, growth, dan cegah penipuan. Cuan boleh, tapi waras harus! Bantu UMKM naik kelas.
                 </p>
                 <Link
                   href="/punokawan#bagong"
@@ -730,6 +724,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <InteractiveCaseStudy />
 
       {/* ─── Marquee ──────────────────────────────────────────────────── */}
       <section className="py-12 overflow-hidden border-t border-white/5 relative bg-white/[0.01]">
@@ -754,8 +750,11 @@ export default function Home() {
               <span className="flex items-center gap-4">
                 KARYA <span className="text-accent">•</span>
               </span>
-              <span className="flex items-center gap-4">
-                GG UNIVERSE <span className="text-white">•</span>
+              <span className="flex items-center gap-4 text-white">
+                NO TULALIT <span className="text-primary">•</span>
+              </span>
+              <span className="flex items-center gap-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                GG UNIVERSE
               </span>
             </div>
           ))}

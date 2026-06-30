@@ -39,11 +39,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+            <Image src="/assets/logo.png" alt="GG7 Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
           </div>
           <span className="text-sm font-bold tracking-tight hidden sm:block">
-            <span className="text-white">Nusantara</span>{" "}
-            <span className="text-primary">Paham AI</span>
+            <span className="text-white">GG7</span>{" "}
+            <span className="text-primary">Universe</span>
           </span>
         </Link>
 

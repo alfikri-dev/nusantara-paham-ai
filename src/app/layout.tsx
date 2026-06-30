@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nusantara Paham AI - AI Pintar Cerdas Nusantara",
-  description: "Platform AI dengan karakter Punokawan. Menyatukan kearifan lokal Nusantara dengan model AI modern.",
+  title: "GG7 Universe | Nusantara Paham AI",
+  description: "Pembantu Pintar Level Doktor Didukung Penuh oleh Agent GG7. Menyatukan kearifan lokal Nusantara dengan kecerdasan AI modern. No Tulalit Anymore!",
 };
 
 export const viewport: Viewport = {

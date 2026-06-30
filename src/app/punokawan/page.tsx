@@ -37,50 +37,50 @@ const VISION_PILLARS = [
 const punokawanList = [
   {
     name: "Semar",
-    role: "Agen Sehat Waras • Master Agent",
-    description: "Sang Master. Memahami gambaran besar dan menjaga agar setiap keputusan sejalan dengan akal sehat (Sehat Waras). Mitra diskusi level doktor untuk strategi jangka panjang, memastikan langkahmu tidak salah arah.",
+    role: "Agen Sehat Waras • Health & Wellness Expert",
+    description: "Pemerhati kesehatan dan teman diskusi untuk gaya hidup yang sehat dan pikiran yang waras. Sehat itu pilihan, waras itu tujuan. Siap bantu kamu hidup lebih sehat, lebih tenang, dan lebih waras.",
     image: "/assets/semar.png",
     color: "from-primary/20 to-purple-600/20",
     border: "group-hover:border-primary/50",
     shadow: "group-hover:shadow-glow-primary",
     icon: ShieldCheck,
-    tags: ["Strategi Makro", "Diskusi Sehat", "Etika & Moral", "Mastermind"],
+    tags: ["Pola Makan Sehat", "Tidur & Pikiran Tenang", "Gerak Harian", "No Tulalit"],
     href: "/chat?agent=semar"
   },
   {
     name: "Petruk",
-    role: "Agen Pasar Dunia • Analyst Agent",
-    description: "Mata dan telinga finansialmu. Spesialis intelijen pasar: saham, emas, kripto, dolar, dan tren global. Menyajikan data riil dan analisis kuantitatif agar kamu paham pergerakan uang dunia.",
+    role: "Agen Pasar Dunia • Global Market & Wealth Advisor",
+    description: "Ahli dalam memantau peluang cuan global (saham, emas, dolar, komoditas) dan memberikan wawasan makro. Ngerti pasar, biar tidak asal ikut kabar. Bukan broker, tapi pencerah wawasan ekonomi.",
     image: "/assets/petruk.png",
     color: "from-secondary/20 to-teal-600/20",
     border: "group-hover:border-secondary/50",
     shadow: "group-hover:shadow-glow-secondary",
     icon: Activity,
-    tags: ["Saham & Finansial", "Tren Global", "Analisis Data", "Intelijen Pasar"],
+    tags: ["Saham Dasar", "Emas & Aset Aman", "Geopolitik", "Data Driven"],
     href: "/chat?agent=petruk"
   },
   {
     name: "Gareng",
-    role: "Agen AI Digital • Creative Agent",
-    description: "Pakar literasi digital. Bertugas mencari info tercepat, merangkum pengetahuan kompleks agar mudah dipelajari, dan membantumu menciptakan konten digital brilian dengan wawasan di atas rata-rata.",
+    role: "Agen AI Digital • AI Content & Fast Learning Engineer",
+    description: "Spesialis dalam riset cepat, belajar hal baru dalam hitungan detik, pembuatan konten kreatif, dan otomatisasi digital. Bikin manusia jadi tidak tulalit! Cari info, ide kreatif & solusi masalah.",
     image: "/assets/gareng_anak.webp",
     color: "from-gold/20 to-yellow-600/20",
     border: "group-hover:border-gold/50",
     shadow: "group-hover:shadow-glow-gold",
     icon: Sparkles,
-    tags: ["Riset Cepat", "Kreator Konten", "Literasi Digital", "Ideasi"],
+    tags: ["Belajar Cepat", "Konten Kreatif", "Otomatisasi", "Solutif"],
     href: "/chat?agent=gareng"
   },
   {
     name: "Bagong",
-    role: "Agen Bisnis • Executor",
-    description: "Tangan kanan bisnis pragmatis. Eksekusi strategi jualan, scaling bisnis online, anti-tipu-tipu, hingga review teknis infrastruktur. Berorientasi pada hasil nyata yang mendatangkan keuntungan.",
+    role: "Agen Bisnis & Strategi • Business Strategy & Anti-Fraud",
+    description: "Ahli strategi bisnis, pertumbuhan, pendeteksi penipuan, dan pengubah peluang menjadi cuan. Cuan boleh, tapi waras harus! Anti kemaruk, pakai logika bukan emosi. Bantu UMKM naik kelas.",
     image: "/assets/bagong.png",
     color: "from-accent/20 to-red-600/20",
     border: "group-hover:border-accent/50",
     shadow: "group-hover:shadow-[0_0_40px_-10px_rgba(255,77,79,0.5)]",
     icon: Briefcase,
-    tags: ["Bisnis Online", "Growth & Sales", "Anti-Fraud", "Eksekusi Taktis"],
+    tags: ["Jago Jualan", "Melek Keuangan", "Anti-Fraud", "Digital Marketing"],
     href: "/chat?agent=bagong"
   }
 ];
@@ -132,10 +132,10 @@ export default function PunokawanPage() {
             
             <div className="space-y-6 text-lg text-white/70">
               <p>
-                Asisten AI pembantu pintar level Doktor — <strong className="text-white">Biar Kamu Nggak Tulalit!</strong> Kami hadir untuk mendampingi hidup, belajar, dan pergaulanmu, memastikan wawasanmu setajam profesor.
+                Asisten AI pintar level Doktor — <strong className="text-white">Biar Kamu Nggak Tulalit!</strong> Kami hadir untuk mendampingi hidup, belajar, dan pergaulanmu, memastikan wawasanmu menandingi profesor.
               </p>
               <p>
-                Sistem ini didesain sebagai <strong className="text-white">Special Agent GG7</strong>: menaikkan kecerdasan, rasa percaya diri, dan personal branding. Dari pusing menyusun strategi marketing sampai butuh wawasan global seputar pasar uang, Punokawan akan merakit solusi brilian <span className="italic">(Karsa, Cipta, Rasa, Karya)</span> agar kamu selalu tampil maksimal di depan atasan maupun klien.
+                Sistem ini didorong sepenuhnya oleh <strong className="text-white">Agent GG7 (GG Universe)</strong>: menaikkan kecerdasan, rasa percaya diri, dan hasil kerja yang nyata. Dari pusing menyusun strategi marketing sampai butuh wawasan global seputar pasar uang, Punokawan akan merakit solusi brilian <span className="italic">(Karsa, Cipta, Rasa, Karya)</span> agar kamu tampil maksimal, <strong className="text-accent">No Tulalit Anymore!</strong>
               </p>
             </div>
           </motion.div>
