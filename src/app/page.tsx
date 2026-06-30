@@ -11,6 +11,7 @@ import {
   scaleIn
 } from "@/lib/motion";
 import Fireflies from "@/components/Fireflies";
+import { ShieldCheck, TrendingUp, Sparkles, Briefcase } from "lucide-react";
 
 // ─── 38 Provinsi Indonesia grouped by pulau ───────────────────────────────────
 const NUSANTARA_REGIONS = [
@@ -575,7 +576,7 @@ export default function Home() {
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
                 <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-gold font-bold text-lg">
-                  S
+                  <ShieldCheck size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Semar</h3>
                 <p className="text-sm font-medium text-gold mb-3">
@@ -618,7 +619,7 @@ export default function Home() {
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
                 <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-secondary font-bold text-lg">
-                  P
+                  <TrendingUp size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Petruk</h3>
                 <p className="text-sm font-medium text-secondary mb-3">
@@ -660,7 +661,7 @@ export default function Home() {
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
                 <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-primary font-bold text-lg">
-                  G
+                  <Sparkles size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Gareng</h3>
                 <p className="text-sm font-medium text-primary mb-3">
@@ -702,7 +703,7 @@ export default function Home() {
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
                 <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-accent font-bold text-lg">
-                  B
+                  <Briefcase size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Bagong</h3>
                 <p className="text-sm font-medium text-accent mb-3">
