@@ -439,8 +439,14 @@ export default function Home() {
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 flex items-center justify-center text-5xl">
-                  👑
+                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                  <Image
+                    src="/assets/semar.png"
+                    alt="Semar"
+                    fill
+                    className="object-cover object-top mix-blend-screen"
+                    sizes="300px"
+                  />
                 </div>
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
@@ -476,8 +482,14 @@ export default function Home() {
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 flex items-center justify-center text-5xl">
-                  📈
+                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                  <Image
+                    src="/assets/petruk.png"
+                    alt="Petruk"
+                    fill
+                    className="object-cover object-top mix-blend-screen"
+                    sizes="300px"
+                  />
                 </div>
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
@@ -554,8 +566,14 @@ export default function Home() {
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 flex items-center justify-center text-5xl">
-                  💼
+                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                  <Image
+                    src="/assets/bagong.png"
+                    alt="Bagong"
+                    fill
+                    className="object-cover object-top mix-blend-screen"
+                    sizes="300px"
+                  />
                 </div>
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
