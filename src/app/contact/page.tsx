@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { fadeInUp, springs } from "@/lib/motion";
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 const AGENT_RESPONSES: Record<string, string[]> = {
   partnership: [
@@ -25,6 +26,26 @@ const AGENT_RESPONSES: Record<string, string[]> = {
     "Memproses konteks dan menentukan agen terbaik...",
     "Kami akan membalas dalam waktu dekat.",
   ],
+  semar: [
+    "Semar menyimak dengan tenang... 🧿",
+    "Kesehatan dan keseimbangan adalah prioritas. Aku akan bantu cari jalan terbaik buatmu.",
+    "Tunggu kabar dari aku sebentar lagi.",
+  ],
+  petruk: [
+    "Petruk buka terminal analisis... 📊",
+    "Data pasar, tren, dan peluang — aku pelajari dulu biar gak asal nebak.",
+    "Laporan detail otw ke inbox kamu.",
+  ],
+  gareng: [
+    "Gareng siap research! 🎨",
+    "Cepet, akurat, kreatif — itu cara aku kerja. Aku carik info & ide terbaik buatmu.",
+    "Hasilnya bakal kluar sebentar lagi.",
+  ],
+  bagong: [
+    "Bagong ngerti bisnis, ngerti risiko! 💼",
+    "Strategi growth, cegah penipuan, naikkan kelas UMKM — serahkan pada aku.",
+    "Tim kami follow up dalam 24 jam.",
+  ],
 };
 
 const TOPICS = [
@@ -32,10 +53,37 @@ const TOPICS = [
   { id: "partnership", label: "Kerjasama & Partnership", agent: "Gareng", icon: "🎨", color: "text-primary border-primary/30 bg-primary/5" },
   { id: "technical", label: "Integrasi Teknis", agent: "Petruk", icon: "📊", color: "text-secondary border-secondary/30 bg-secondary/5" },
   { id: "business", label: "Solusi Bisnis", agent: "Bagong", icon: "💼", color: "text-accent border-accent/30 bg-accent/5" },
+  { id: "semar", label: "Kesehatan & Wellness", agent: "Semar", icon: "🧿", color: "text-gold border-gold/30 bg-gold/5" },
+  { id: "petruk", label: "Pasar & Investasi", agent: "Petruk", icon: "📊", color: "text-secondary border-secondary/30 bg-secondary/5" },
+  { id: "gareng", label: "Riset & Kreatif", agent: "Gareng", icon: "🎨", color: "text-primary border-primary/30 bg-primary/5" },
+  { id: "bagong", label: "Bisnis & Anti-Fraud", agent: "Bagong", icon: "💼", color: "text-accent border-accent/30 bg-accent/5" },
 ];
 
-export default function ContactPage() {
-  const [topic, setTopic] = useState("general");
+// Mapping agent query param to topic id
+const AGENT_TO_TOPIC: Record<string, string> = {
+  semar: "semar",
+  petruk: "petruk",
+  gareng: "gareng",
+  bagong: "bagong",
+};
+
+export default function ContactPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white/40">Memuat agen...</div>}>
+      <ContactPage />
+    </Suspense>
+  );
+}
+
+function ContactPage() {
+  const searchParams = useSearchParams();
+  const [topic, setTopic] = useState(() => {
+    const agent = searchParams.get("agent");
+    if (agent && AGENT_TO_TOPIC[agent]) {
+      return AGENT_TO_TOPIC[agent];
+    }
+    return "general";
+  });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

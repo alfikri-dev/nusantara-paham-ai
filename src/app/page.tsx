@@ -180,15 +180,34 @@ export default function Home() {
           style={{ y: circle2Y }}
         />
 
-        {/* Nusantara SVG Background Decorations */}
-        <div className="absolute top-1/4 left-10 opacity-20 -z-10 pointer-events-none hidden lg:block">
-          <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 50 C 30 10, 70 10, 90 50 C 70 90, 30 90, 10 50 Z" stroke="url(#paint0_linear)" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4" />
-            <circle cx="50" cy="50" r="10" stroke="url(#paint0_linear)" strokeWidth="1" />
+        {/* Nusantara SVG Background Decorations (Gunungan & Ornamen) */}
+        <div className="absolute top-[15%] left-[-5%] opacity-15 -z-10 pointer-events-none hidden lg:block">
+          {/* Siluet Gunungan Wayang (Abstract CSS/SVG Art) */}
+          <svg width="400" height="400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 10 L 190 190 L 10 190 Z" fill="url(#gunungan_gradient)" opacity="0.3" />
+            <path d="M100 30 L 170 190 L 30 190 Z" stroke="url(#gunungan_gradient)" strokeWidth="2" strokeDasharray="4 4" />
+            <circle cx="100" cy="120" r="30" stroke="#f59e0b" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
+            <circle cx="100" cy="120" r="10" fill="#f59e0b" opacity="0.8" />
             <defs>
-              <linearGradient id="paint0_linear" x1="10" y1="50" x2="90" y2="50" gradientUnits="userSpaceOnUse">
+              <linearGradient id="gunungan_gradient" x1="100" y1="10" x2="100" y2="190" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#f59e0b" />
-                <stop offset="1" stopColor="#3b82f6" />
+                <stop offset="1" stopColor="#b45309" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="absolute top-[20%] right-[5%] opacity-20 -z-10 pointer-events-none hidden lg:block">
+          {/* Motif Megamendung (Abstract) */}
+          <svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 50 150 Q 75 100 120 120 T 200 100 T 280 140" stroke="url(#mega_gradient)" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <path d="M 30 170 Q 80 130 140 150 T 220 130 T 290 160" stroke="url(#mega_gradient)" strokeWidth="1" fill="none" strokeDasharray="5 5" opacity="0.6" />
+            <circle cx="120" cy="120" r="4" fill="#3b82f6" />
+            <circle cx="200" cy="100" r="4" fill="#3b82f6" />
+            <defs>
+              <linearGradient id="mega_gradient" x1="0" y1="150" x2="300" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#3b82f6" />
+                <stop offset="1" stopColor="#10b981" />
               </linearGradient>
             </defs>
           </svg>
@@ -203,11 +222,11 @@ export default function Home() {
           </svg>
         </div>
 
-        {/* Corner ornaments */}
-        <div className="absolute top-28 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/20 opacity-40 -z-10" />
-        <div className="absolute top-28 right-8 w-16 h-16 border-t-2 border-r-2 border-primary/20 opacity-40 -z-10" />
-        <div className="absolute bottom-16 left-8 w-16 h-16 border-b-2 border-l-2 border-primary/20 opacity-40 -z-10" />
-        <div className="absolute bottom-16 right-8 w-16 h-16 border-b-2 border-r-2 border-primary/20 opacity-40 -z-10" />
+        {/* Corner ornaments (Batik Kawung inspired) */}
+        <div className="absolute top-28 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/20 rounded-tl-full opacity-40 -z-10" />
+        <div className="absolute top-28 right-8 w-16 h-16 border-t-2 border-r-2 border-primary/20 rounded-tr-full opacity-40 -z-10" />
+        <div className="absolute bottom-16 left-8 w-16 h-16 border-b-2 border-l-2 border-primary/20 rounded-bl-full opacity-40 -z-10" />
+        <div className="absolute bottom-16 right-8 w-16 h-16 border-b-2 border-r-2 border-primary/20 rounded-br-full opacity-40 -z-10" />
 
         <div className="mx-auto max-w-7xl flex flex-col items-center justify-center text-center w-full relative z-10 pt-10">
           <motion.div
@@ -230,27 +249,33 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-display-md md:text-display-lg lg:text-[4.5rem] font-display font-bold leading-[1.05] mb-8 tracking-tight max-w-5xl"
+              className="text-display-md md:text-display-lg lg:text-[5.5rem] font-display font-bold leading-[1.1] mb-6 tracking-tight max-w-5xl"
             >
-              Menyusuri Jejak
+              Nusantara
               <br />
               <span className="relative inline-block mt-2">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-primary to-secondary">
-                  Kecerdasan Nusantara
+                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-primary to-secondary drop-shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+                  Paham AI
                 </span>
-                <span className="absolute -bottom-2 left-0 w-full h-4 bg-primary/20 blur-xl -z-10" />
+                <span className="absolute -bottom-2 left-0 w-full h-4 bg-primary/30 blur-2xl -z-10" />
               </span>
             </motion.h1>
 
-            <motion.p
+            <motion.div
               initial="hidden"
               animate="visible"
               custom={1}
               variants={fadeInUp}
-              className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl font-medium leading-relaxed"
+              className="mb-10 max-w-3xl flex flex-col items-center"
             >
-              <strong className="text-white">Platform AI Pertama</strong> yang menggabungkan kearifan lokal 38 Provinsi Indonesia dengan kecanggihan model kecerdasan buatan modern. <span className="text-primary font-semibold">Inklusif. Adaptif. Menyeluruh.</span>
-            </motion.p>
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
+                Perkenalan Seri <span className="text-primary">Punokawan Paham AI</span>
+              </h2>
+              <p className="text-lg text-white/70 font-medium leading-relaxed">
+                Platform AI inklusif yang memadukan kearifan lokal 38 Provinsi dengan Agen AI Eksekutor. 
+                <br className="hidden md:block" /> Hadirkan asisten cerdas berkarakter Nusantara untuk bisnis dan keseharian Anda.
+              </p>
+            </motion.div>
 
             <motion.div
               initial="hidden"
@@ -533,7 +558,24 @@ export default function Home() {
       </section>
 
       {/* ─── Sub-Product: Punokawan (Powered by GG7) ─────────────────────── */}
-      <section className="px-6 md:px-12 py-32 relative">
+      <section className="px-6 md:px-12 py-32 relative overflow-hidden">
+        {/* Wayang-inspired SVG ornament left */}
+        <div className="absolute -left-20 top-1/4 opacity-10 pointer-events-none -z-10 hidden lg:block">
+          <svg width="300" height="500" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 20 C 140 60, 140 120, 100 160 C 60 200, 60 260, 100 300 C 140 340, 140 380, 100 400" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 6" opacity="0.3"/>
+            <path d="M100 40 C 130 80, 130 130, 100 160 C 70 190, 70 230, 100 260 C 130 290, 130 330, 100 380" stroke="#f59e0b" strokeWidth="1" strokeDasharray="2 4" opacity="0.15"/>
+            <circle cx="100" cy="100" r="4" fill="#f59e0b" opacity="0.2"/>
+            <circle cx="100" cy="240" r="4" fill="#f59e0b" opacity="0.2"/>
+          </svg>
+        </div>
+        {/* Wayang-inspired SVG ornament right */}
+        <div className="absolute -right-20 bottom-1/4 opacity-10 pointer-events-none -z-10 hidden lg:block">
+          <svg width="250" height="400" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 0 C 70 60, 130 120, 100 180 C 70 240, 130 300, 100 400" stroke="#10b981" strokeWidth="1" strokeDasharray="4 4" opacity="0.2"/>
+            <path d="M100 30 C 80 80, 120 140, 100 190 C 80 240, 120 280, 100 350" stroke="#10b981" strokeWidth="1" opacity="0.1"/>
+          </svg>
+        </div>
+
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial="hidden"
@@ -553,8 +595,9 @@ export default function Home() {
                 Core Agents
               </span>
             </h2>
-            <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-              <strong className="text-white/90">Punokawan Paham AI</strong> adalah salah satu lini produk di bawah Nusantara Paham AI — dikhususkan sebagai tim agen eksekutor berkarakter Jawa yang orkestrasinya ditenagai oleh Agent GG7.
+            <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              <strong className="text-white/90">Punokawan Paham AI</strong> adalah lini produk agen AI eksekutor berkarakter Jawa — orkestrasinya ditenagai penuh oleh{" "}
+              <span className="text-primary font-semibold">Agent GG7</span>, langsung siap membantu Anda.
             </p>
           </motion.div>
 
@@ -566,7 +609,7 @@ export default function Home() {
               viewport={{ once: true }}
               custom={0}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[420px]"
+              className="group card overflow-hidden flex flex-col h-[460px]"
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
@@ -579,23 +622,25 @@ export default function Home() {
                     sizes="300px"
                   />
                 </div>
+                {/* Ornamen shadow */}
+                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-gold font-bold text-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-gold font-bold text-lg shadow-[0_0_15px_rgba(245,158,11,0.15)]">
                   <ShieldCheck size={24} />
                 </div>
-                <h3 className="text-2xl font-bold mb-1">Semar</h3>
-                <p className="text-sm font-medium text-gold mb-3">
+                <h3 className="text-2xl font-bold mb-1 text-white">Semar</h3>
+                <p className="text-sm font-medium text-gold mb-3 tracking-wide">
                   Sehat Waras · Health & Wellness
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
                   Pemerhati kesehatan dan teman diskusi. Sehat itu pilihan, waras itu tujuan. Siap bantu hidup lebih sehat & tenang.
                 </p>
                 <Link
-                  href="/punokawan#semar"
-                  className="text-xs font-bold text-white/40 hover:text-white uppercase tracking-wider transition-colors"
+                  href="/contact?agent=semar"
+                  className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-gold/30 bg-gold/[0.08] text-gold hover:bg-gold hover:text-black transition-all duration-300"
                 >
-                  Lihat Detail →
+                  Mulai Sesi →
                 </Link>
               </div>
             </motion.div>
@@ -607,7 +652,7 @@ export default function Home() {
               viewport={{ once: true }}
               custom={1}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[420px]"
+              className="group card overflow-hidden flex flex-col h-[460px]"
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
@@ -620,23 +665,24 @@ export default function Home() {
                     sizes="300px"
                   />
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-secondary font-bold text-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-secondary font-bold text-lg shadow-[0_0_15px_rgba(59,130,246,0.15)]">
                   <TrendingUp size={24} />
                 </div>
-                <h3 className="text-2xl font-bold mb-1">Petruk</h3>
-                <p className="text-sm font-medium text-secondary mb-3">
+                <h3 className="text-2xl font-bold mb-1 text-white">Petruk</h3>
+                <p className="text-sm font-medium text-secondary mb-3 tracking-wide">
                   Pasar Dunia · Market Advisor
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
                   Ahli pantau peluang cuan global (saham, emas, dolar). Ngerti pasar biar tidak asal ikut kabar & wawasan ekonomi mumpuni.
                 </p>
                 <Link
-                  href="/punokawan#petruk"
-                  className="text-xs font-bold text-white/40 hover:text-white uppercase tracking-wider transition-colors"
+                  href="/contact?agent=petruk"
+                  className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-secondary/30 bg-secondary/[0.08] text-secondary hover:bg-secondary hover:text-black transition-all duration-300"
                 >
-                  Lihat Detail →
+                  Mulai Sesi →
                 </Link>
               </div>
             </motion.div>
@@ -648,7 +694,7 @@ export default function Home() {
               viewport={{ once: true }}
               custom={2}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[420px]"
+              className="group card overflow-hidden flex flex-col h-[460px]"
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
@@ -661,23 +707,24 @@ export default function Home() {
                     sizes="300px"
                   />
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-primary font-bold text-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-primary font-bold text-lg shadow-[0_0_15px_rgba(245,158,11,0.15)]">
                   <Sparkles size={24} />
                 </div>
-                <h3 className="text-2xl font-bold mb-1">Gareng</h3>
-                <p className="text-sm font-medium text-primary mb-3">
+                <h3 className="text-2xl font-bold mb-1 text-white">Gareng</h3>
+                <p className="text-sm font-medium text-primary mb-3 tracking-wide">
                   AI Digital · Fast Learning
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
                   Spesialis riset cepat, konten kreatif, dan otomatisasi. Bikin manusia jadi nggak tulalit! Ahli cari info & ide.
                 </p>
                 <Link
-                  href="/punokawan#gareng"
-                  className="text-xs font-bold text-white/40 hover:text-white uppercase tracking-wider transition-colors"
+                  href="/contact?agent=gareng"
+                  className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-primary/30 bg-primary/[0.08] text-primary hover:bg-primary hover:text-black transition-all duration-300"
                 >
-                  Lihat Detail →
+                  Mulai Sesi →
                 </Link>
               </div>
             </motion.div>
@@ -689,7 +736,7 @@ export default function Home() {
               viewport={{ once: true }}
               custom={3}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[420px]"
+              className="group card overflow-hidden flex flex-col h-[460px]"
             >
               <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
@@ -702,31 +749,33 @@ export default function Home() {
                     sizes="300px"
                   />
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-accent font-bold text-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-accent font-bold text-lg shadow-[0_0_15px_rgba(16,185,129,0.15)]">
                   <Briefcase size={24} />
                 </div>
-                <h3 className="text-2xl font-bold mb-1">Bagong</h3>
-                <p className="text-sm font-medium text-accent mb-3">
+                <h3 className="text-2xl font-bold mb-1 text-white">Bagong</h3>
+                <p className="text-sm font-medium text-accent mb-3 tracking-wide">
                   Bisnis & Strategi · Anti-Fraud
                 </p>
                 <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
                   Ahli strategi bisnis, growth, dan cegah penipuan. Cuan boleh, tapi waras harus! Bantu UMKM naik kelas.
                 </p>
                 <Link
-                  href="/punokawan#bagong"
-                  className="text-xs font-bold text-white/40 hover:text-white uppercase tracking-wider transition-colors"
+                  href="/contact?agent=bagong"
+                  className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-accent/30 bg-accent/[0.08] text-accent hover:bg-accent hover:text-black transition-all duration-300"
                 >
-                  Lihat Detail →
+                  Mulai Sesi →
                 </Link>
               </div>
             </motion.div>
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/punokawan" className="btn-secondary inline-flex">
-              Eksplorasi Tim Punokawan
+            <Link href="/punokawan" className="btn-secondary inline-flex items-center gap-2">
+              <span>Eksplorasi Tim Punokawan</span>
+              <span className="text-lg">→</span>
             </Link>
           </div>
         </div>
