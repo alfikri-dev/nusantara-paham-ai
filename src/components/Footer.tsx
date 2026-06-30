@@ -32,7 +32,7 @@ export default function Footer() {
               {[
                 { href: "/punokawan", label: "Punokawan AI" },
                 { href: "/about", label: "Tentang" },
-                { href: "/chat", label: "Chat" },
+                { href: "/contact", label: "Contact Us" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/40 hover:text-primary transition-colors">
@@ -43,13 +43,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Powered by */}
+          {/* Legal */}
           <div>
-            <h4 className="font-semibold text-sm text-white/60 mb-4 uppercase tracking-wider">Tenaga AI</h4>
+            <h4 className="font-semibold text-sm text-white/60 mb-4 uppercase tracking-wider">Legal</h4>
             <ul className="space-y-2 text-sm text-white/40">
-              {["GPT-4o", "Claude Sonnet", "Gemini 2.5", "Llama 3", "DeepSeek"].map((model) => (
-                <li key={model}>{model}</li>
-              ))}
+              <li><Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><a href="mailto:contact@gguniverse.id" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -57,10 +57,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Nusantara Paham AI. Punokawan abadi, ditenagai AI.
+            GG Universe by GeniusGrowthAI
           </p>
           <div className="flex items-center gap-4 text-xs text-white/30">
-            <span>🇮🇩 Bangga Buatan Indonesia</span>
+            <span>🇮🇩 Nusantara Paham AI</span>
           </div>
         </div>
       </div>

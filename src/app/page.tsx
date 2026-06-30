@@ -178,6 +178,29 @@ export default function Home() {
           style={{ y: circle2Y }}
         />
 
+        {/* Nusantara SVG Background Decorations */}
+        <div className="absolute top-1/4 left-10 opacity-20 -z-10 pointer-events-none hidden lg:block">
+          <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 50 C 30 10, 70 10, 90 50 C 70 90, 30 90, 10 50 Z" stroke="url(#paint0_linear)" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4" />
+            <circle cx="50" cy="50" r="10" stroke="url(#paint0_linear)" strokeWidth="1" />
+            <defs>
+              <linearGradient id="paint0_linear" x1="10" y1="50" x2="90" y2="50" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#f59e0b" />
+                <stop offset="1" stopColor="#3b82f6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        
+        <div className="absolute bottom-32 right-10 opacity-20 -z-10 pointer-events-none hidden lg:block">
+          <svg width="180" height="120" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 80 Q 50 10, 90 80 T 170 80" stroke="#10b981" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="50" cy="45" r="3" fill="#10b981" />
+            <circle cx="130" cy="80" r="3" fill="#10b981" />
+            <path d="M10 90 L 170 90" stroke="white" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 4" />
+          </svg>
+        </div>
+
         {/* Corner ornaments */}
         <div className="absolute top-28 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/20 opacity-40 -z-10" />
         <div className="absolute top-28 right-8 w-16 h-16 border-t-2 border-r-2 border-primary/20 opacity-40 -z-10" />
@@ -195,9 +218,9 @@ export default function Home() {
               transition={springs.bouncy}
               className="inline-flex items-center gap-2 px-5 py-2 mb-8 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md"
             >
-              <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse-glow" />
-              <span className="text-xs md:text-sm font-semibold tracking-widest text-amber-500/90 uppercase">
-                {totalProvinsi} Provinsi · Satu Nusantara
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
+              <span className="text-xs md:text-sm font-semibold tracking-widest text-white/90">
+                POWERED BY <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">GG UNIVERSE</span>
               </span>
             </motion.div>
 
@@ -396,6 +419,107 @@ export default function Home() {
               </div>
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* ─── Pricing Plans ──────────────────────────────────────────────── */}
+      <section className="px-6 md:px-12 py-32 relative bg-background">
+        <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none" />
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-display-md md:text-display-lg font-display font-bold mb-4">
+              Investasi AI <span className="text-primary italic">Nusantara</span>
+            </h2>
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Paket berlangganan yang dioptimalkan untuk akses Agen Punokawan, analitik data, dan integrasi API (powered by GG Universe).
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Mini */}
+            <div className="card p-8 flex flex-col rounded-3xl border border-white/10 bg-white/[0.02]">
+              <div className="mb-8">
+                <h3 className="text-xl font-bold mb-2 text-white">Mini</h3>
+                <p className="text-white/50 text-sm h-10">Akses awal dunia AI Nusantara dengan kuota memadai.</p>
+              </div>
+              <div className="mb-8">
+                <div className="text-4xl font-display font-bold flex items-end gap-1">
+                  <span className="text-2xl">Rp</span>49k<span className="text-lg text-white/40 font-normal">/bln</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> 600 Credit AI
+                </li>
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> Akses Dasar Agen Punokawan
+                </li>
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-white/20">-</span> <span className="text-white/40 line-through">Dukungan Prioritas</span>
+                </li>
+              </ul>
+              <Link href="/contact" className="w-full py-3 rounded-full text-center border border-white/20 text-white hover:bg-white hover:text-black transition-colors font-semibold text-sm">
+                Pilih Mini
+              </Link>
+            </div>
+
+            {/* Plus */}
+            <div className="card p-8 flex flex-col rounded-3xl border border-primary/50 bg-primary/[0.05] relative transform md:-translate-y-4 shadow-glow-primary">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">
+                Paling Laris
+              </div>
+              <div className="mb-8">
+                <h3 className="text-xl font-bold mb-2 text-primary">Plus</h3>
+                <p className="text-white/50 text-sm h-10">Cocok untuk tim kecil dan eksplorasi lebih dalam.</p>
+              </div>
+              <div className="mb-8">
+                <div className="text-4xl font-display font-bold flex items-end gap-1 text-white">
+                  <span className="text-2xl">Rp</span>149k<span className="text-lg text-white/40 font-normal">/bln</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> 2,200 Credit AI
+                </li>
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> Full Akses Agen Punokawan
+                </li>
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> Bantuan Teknis Email
+                </li>
+              </ul>
+              <Link href="/contact" className="w-full py-3 rounded-full text-center bg-primary text-black hover:bg-primary/90 transition-colors font-semibold text-sm">
+                Pilih Plus
+              </Link>
+            </div>
+
+            {/* Pro */}
+            <div className="card p-8 flex flex-col rounded-3xl border border-white/10 bg-white/[0.02]">
+              <div className="mb-8">
+                <h3 className="text-xl font-bold mb-2 text-white">Pro</h3>
+                <p className="text-white/50 text-sm h-10">Pengalaman tanpa batas untuk orkestrasi penuh.</p>
+              </div>
+              <div className="mb-8">
+                <div className="text-4xl font-display font-bold flex items-end gap-1">
+                  <span className="text-2xl">Rp</span>299k<span className="text-lg text-white/40 font-normal">/bln</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> 5,000 Credit AI
+                </li>
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> Akses API Khusus
+                </li>
+                <li className="flex gap-3 text-sm text-white/70">
+                  <span className="text-primary">✓</span> Dukungan 24/7 Prioritas
+                </li>
+              </ul>
+              <Link href="/contact" className="w-full py-3 rounded-full text-center border border-white/20 text-white hover:bg-white hover:text-black transition-colors font-semibold text-sm">
+                Pilih Pro
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -630,7 +754,7 @@ export default function Home() {
                 KARYA <span className="text-accent">•</span>
               </span>
               <span className="flex items-center gap-4">
-                38 PROVINSI <span className="text-white">•</span>
+                GG UNIVERSE <span className="text-white">•</span>
               </span>
             </div>
           ))}

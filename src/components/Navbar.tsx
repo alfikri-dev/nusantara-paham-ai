@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/punokawan", label: "Punokawan" },
   { href: "/about", label: "Tentang" },
-  { href: "/chat", label: "Chat" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
