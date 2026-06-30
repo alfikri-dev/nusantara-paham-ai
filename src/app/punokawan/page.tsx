@@ -2,92 +2,188 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import { fadeInUp, springs } from "@/lib/motion";
-import { ArrowRight, Sparkles, PenTool, Code } from "lucide-react";
+import { ArrowRight, Sparkles, Network, BrainCircuit, Activity, ShieldCheck, GraduationCap, Briefcase } from "lucide-react";
+
+const VISION_PILLARS = [
+  {
+    title: "Karsa (Inisiatif)",
+    desc: "AI yang proaktif mencari solusi, bukan sekadar menunggu perintah. Menganalisis konteks sebelum diminta.",
+    icon: Activity,
+    color: "text-primary"
+  },
+  {
+    title: "Cipta (Logika)",
+    desc: "Arsitektur reasoning terstruktur. Memecah masalah kompleks menjadi langkah-langkah yang bisa dieksekusi mesin.",
+    icon: BrainCircuit,
+    color: "text-secondary"
+  },
+  {
+    title: "Rasa (Etika & Estetika)",
+    desc: "Memahami nuansa budaya, etika lokal, dan menyajikannya dalam output yang manusiawi dan estetik.",
+    icon: Sparkles,
+    color: "text-gold"
+  },
+  {
+    title: "Karya (Eksekusi)",
+    desc: "Sistem yang berorientasi pada hasil akhir yang nyata. Dari kode yang berjalan hingga strategi yang teruji.",
+    icon: Network,
+    color: "text-accent"
+  }
+];
 
 const punokawanList = [
   {
-    name: "Gareng",
-    role: "Si Jenaka (Kreatif & Ide)",
-    description: "Cerdik dan penuh ide segar. Cocok untuk brainstorming, bikin konten viral, atau mencari jalan keluar dari kebuntuan ide.",
-    image: "/assets/gareng_anak.webp",
-    color: "from-secondary/20 to-primary/20",
-    border: "group-hover:border-secondary/50",
-    shadow: "group-hover:shadow-glow-secondary",
-    icon: Sparkles,
-    tags: ["Ide Kreatif", "Konten", "Brainstorming"],
-    href: "/chat?agent=gareng"
-  },
-  {
     name: "Semar",
-    role: "Sang Pamong (Bijak & Strategi)",
-    description: "Kebijaksanaan tertinggi. Ahli strategi, nasehat filosofis, arsitektur sistem, dan penjaga nilai moral dalam keputusan.",
+    role: "Agen Sehat Waras • Master Agent",
+    description: "Sang Master. Memahami gambaran besar dan menjaga agar setiap keputusan sejalan dengan akal sehat (Sehat Waras). Mitra diskusi level doktor untuk strategi jangka panjang, memastikan langkahmu tidak salah arah.",
     image: "/assets/semar.png",
-    color: "from-primary/20 to-purple-500/20",
+    color: "from-primary/20 to-purple-600/20",
     border: "group-hover:border-primary/50",
     shadow: "group-hover:shadow-glow-primary",
-    icon: PenTool,
-    tags: ["Strategi", "Filosofi", "Arsitektur"],
+    icon: ShieldCheck,
+    tags: ["Strategi Makro", "Diskusi Sehat", "Etika & Moral", "Mastermind"],
     href: "/chat?agent=semar"
   },
   {
     name: "Petruk",
-    role: "Si Pujangga (Copywriting)",
-    description: "Jago merangkai kata. Membuat cerita panjang, artikel mendalam, presentasi memukau, atau dokumentasi yang jelas.",
+    role: "Agen Pasar Dunia • Analyst Agent",
+    description: "Mata dan telinga finansialmu. Spesialis intelijen pasar: saham, emas, kripto, dolar, dan tren global. Menyajikan data riil dan analisis kuantitatif agar kamu paham pergerakan uang dunia.",
     image: "/assets/petruk.png",
-    color: "from-gold/20 to-yellow-500/20",
-    border: "group-hover:border-gold/50",
-    shadow: "group-hover:shadow-glow-gold",
-    icon: PenTool,
-    tags: ["Copywriting", "Storytelling", "Artikel"],
+    color: "from-secondary/20 to-teal-600/20",
+    border: "group-hover:border-secondary/50",
+    shadow: "group-hover:shadow-glow-secondary",
+    icon: Activity,
+    tags: ["Saham & Finansial", "Tren Global", "Analisis Data", "Intelijen Pasar"],
     href: "/chat?agent=petruk"
   },
   {
+    name: "Gareng",
+    role: "Agen AI Digital • Creative Agent",
+    description: "Pakar literasi digital. Bertugas mencari info tercepat, merangkum pengetahuan kompleks agar mudah dipelajari, dan membantumu menciptakan konten digital brilian dengan wawasan di atas rata-rata.",
+    image: "/assets/gareng_anak.webp",
+    color: "from-gold/20 to-yellow-600/20",
+    border: "group-hover:border-gold/50",
+    shadow: "group-hover:shadow-glow-gold",
+    icon: Sparkles,
+    tags: ["Riset Cepat", "Kreator Konten", "Literasi Digital", "Ideasi"],
+    href: "/chat?agent=gareng"
+  },
+  {
     name: "Bagong",
-    role: "Si Kritis (QA & Code Review)",
-    description: "Polos tapi tajam. Mempertanyakan asumsimu, mencari bug tersembunyi, dan memberikan review kode tanpa tedeng aling-aling.",
+    role: "Agen Bisnis • Executor",
+    description: "Tangan kanan bisnis pragmatis. Eksekusi strategi jualan, scaling bisnis online, anti-tipu-tipu, hingga review teknis infrastruktur. Berorientasi pada hasil nyata yang mendatangkan keuntungan.",
     image: "/assets/bagong.png",
-    color: "from-accent/20 to-red-500/20",
+    color: "from-accent/20 to-red-600/20",
     border: "group-hover:border-accent/50",
     shadow: "group-hover:shadow-[0_0_40px_-10px_rgba(255,77,79,0.5)]",
-    icon: Code,
-    tags: ["Code Review", "Testing", "Kritik Solutif"],
+    icon: Briefcase,
+    tags: ["Bisnis Online", "Growth & Sales", "Anti-Fraud", "Eksekusi Taktis"],
     href: "/chat?agent=bagong"
   }
 ];
 
 export default function PunokawanPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+  
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <main className="min-h-screen relative pt-32 pb-24 px-6 md:px-12 overflow-hidden">
+    <main ref={containerRef} className="min-h-screen relative pt-32 pb-24 overflow-hidden">
       {/* ─── Ambient Background ────────────────────────────────────────── */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <motion.div 
+        style={{ y: yBg }}
+        className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full pointer-events-none -z-10" 
+      />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
       <div className="absolute inset-0 parang-pattern opacity-5 pointer-events-none -z-10" />
       <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none -z-10" />
 
-      <div className="mx-auto max-w-7xl">
-        {/* Header */}
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        {/* ─── Vision / Branding Section ─────────────────────────────────── */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-32 items-center">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="flex-1"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-semibold tracking-widest text-primary uppercase">
+                GG Universe Mission
+              </span>
+            </div>
+            
+            <h1 className="text-display-md md:text-display-lg font-display font-bold mb-6">
+              Punokawan <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-hero">
+                Paham AI
+              </span>
+            </h1>
+            
+            <div className="space-y-6 text-lg text-white/70">
+              <p>
+                Asisten AI pembantu pintar level Doktor — <strong className="text-white">Biar Kamu Nggak Tulalit!</strong> Kami hadir untuk mendampingi hidup, belajar, dan pergaulanmu, memastikan wawasanmu setajam profesor.
+              </p>
+              <p>
+                Sistem ini didesain sebagai <strong className="text-white">Special Agent GG7</strong>: menaikkan kecerdasan, rasa percaya diri, dan personal branding. Dari pusing menyusun strategi marketing sampai butuh wawasan global seputar pasar uang, Punokawan akan merakit solusi brilian <span className="italic">(Karsa, Cipta, Rasa, Karya)</span> agar kamu selalu tampil maksimal di depan atasan maupun klien.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            custom={1}
+            className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
+          >
+            {VISION_PILLARS.map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <div key={pillar.title} className="glass p-6 group hover:bg-white/[0.06] transition-colors duration-300">
+                  <Icon size={24} className={`${pillar.color} mb-4`} />
+                  <h3 className="text-lg font-bold mb-2">{pillar.title}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{pillar.desc}</p>
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+
+        {/* ─── Divider ───────────────────────────────────────────────────── */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-24" />
+
+        {/* ─── Selection Section ─────────────────────────────────────────── */}
         <motion.div 
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="mb-16 md:mb-20"
+          className="mb-16 md:mb-20 text-center"
         >
-          <h1 className="text-display-lg md:text-display-xl font-display font-bold mb-4">
-            Pilih <span className="text-primary italic">Karaktermu</span>
-          </h1>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl">
-            Empat pendekatan berbeda untuk masalah yang sama. 
-            Siapa yang kamu butuhkan hari ini?
+          <div className="inline-flex items-center gap-2 mb-4">
+            <GraduationCap className="text-gold" size={24} />
+          </div>
+          <h2 className="text-display-md font-display font-bold mb-4">
+            Pilih <span className="text-white/50 italic">Pamong-mu</span>
+          </h2>
+          <p className="text-white/60 text-lg mx-auto max-w-2xl">
+            Tinggalkan rasa frustrasi. Pilih satu agen spesialis yang siap membantumu mengeksekusi strategi brilian. {'\u201C'}No tulalit man!{'\u201D'}
           </p>
         </motion.div>
 
-        {/* Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+        {/* ─── Agent Grid ────────────────────────────────────────────────── */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-10">
           {punokawanList.map((agent, index) => {
             const Icon = agent.icon;
             const isHovered = hoveredIndex === index;
@@ -96,12 +192,13 @@ export default function PunokawanPage() {
               <motion.div
                 key={agent.name}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
+                viewport={{ once: true }}
                 custom={index}
                 variants={fadeInUp}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                className={`relative group card p-6 md:p-8 flex flex-col xl:flex-row gap-8 overflow-hidden transition-all duration-500 bg-surface-2 ${agent.border} ${agent.shadow}`}
+                className={`relative group card p-6 md:p-8 flex flex-col md:flex-row gap-8 overflow-hidden transition-all duration-500 bg-surface-2 ${agent.border} ${agent.shadow}`}
               >
                 {/* Dynamic Gradient Background on Hover */}
                 <div 
@@ -109,25 +206,25 @@ export default function PunokawanPage() {
                 />
 
                 {/* Avatar Column */}
-                <div className="w-full xl:w-[200px] aspect-[4/5] xl:aspect-auto xl:h-[280px] relative shrink-0 rounded-2xl overflow-hidden glass p-2">
+                <div className="w-full md:w-[220px] aspect-[4/5] md:aspect-auto md:h-full min-h-[260px] relative shrink-0 rounded-2xl overflow-hidden glass p-2">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
                   <motion.div
                     animate={{ scale: isHovered ? 1.05 : 1 }}
                     transition={springs.gentle}
-                    className="w-full h-full relative rounded-xl overflow-hidden"
+                    className="w-full h-full relative rounded-xl overflow-hidden bg-black/50"
                   >
                     <Image
                       src={agent.image}
                       alt={agent.name}
                       fill
-                      sizes="(max-width: 1280px) 100vw, 200px"
+                      sizes="(max-width: 768px) 100vw, 220px"
                       className="object-cover object-top mix-blend-screen opacity-90"
                     />
                   </motion.div>
                 </div>
 
                 {/* Info Column */}
-                <div className="flex flex-col justify-between flex-grow z-10">
+                <div className="flex flex-col justify-between flex-grow z-10 py-2">
                   <div>
                     <div className="inline-flex items-center gap-2 mb-3">
                       <Icon size={16} className="text-white/60" />
@@ -138,11 +235,11 @@ export default function PunokawanPage() {
                     
                     <h2 className="text-3xl font-display font-bold mb-3">{agent.name}</h2>
                     
-                    <p className="text-white/60 mb-6 leading-relaxed text-sm md:text-base">
+                    <p className="text-white/60 mb-6 leading-relaxed text-sm">
                       {agent.description}
                     </p>
                     
-                    <div className="flex flex-wrap gap-2 mb-8 xl:mb-0">
+                    <div className="flex flex-wrap gap-2 mb-8">
                       {agent.tags.map(tag => (
                         <span 
                           key={tag} 
@@ -156,9 +253,9 @@ export default function PunokawanPage() {
 
                   <Link 
                     href={agent.href}
-                    className="w-full py-3 sm:py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-semibold transition-all duration-200 flex items-center justify-center gap-2 group/btn"
+                    className="w-full py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-semibold transition-all duration-200 flex items-center justify-center gap-2 group/btn backdrop-blur-sm"
                   >
-                    Mulai Chat 
+                    Mulai Sesi (No Tulalit)
                     <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
