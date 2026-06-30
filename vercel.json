@@ -1,5 +1,5 @@
 {
-  "buildCommand": "next build",
-  "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "yarn build",
+  "installCommand": "yarn install",
   "framework": "nextjs"
 }
