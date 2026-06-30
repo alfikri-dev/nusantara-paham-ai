@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -12,8 +13,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <div className="relative w-8 h-8 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-hero rounded-lg opacity-80" />
-                <span className="relative text-white font-bold text-sm">N</span>
+                <Image src="/assets/logo.png" alt="Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
               </div>
               <span className="font-bold text-sm">
                 Nusantara <span className="text-primary">Paham AI</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -38,8 +39,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-hero rounded-lg opacity-80 group-hover:opacity-100 transition-opacity" />
-            <span className="relative text-white font-bold text-sm">N</span>
+            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
           </div>
           <span className="text-sm font-bold tracking-tight hidden sm:block">
             <span className="text-white">Nusantara</span>{" "}
