@@ -10,6 +10,7 @@ import {
   fadeInUp, 
   scaleIn
 } from "@/lib/motion";
+import Fireflies from "@/components/Fireflies";
 
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       {/* ─── Base Background Patterns ─────────────────────────────────── */}
       <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none -z-40" />
       <div className="absolute inset-0 batik-pattern opacity-10 pointer-events-none -z-40" />
+      <Fireflies />
 
       {/* ─── Hero Section ─────────────────────────────────────────────── */}
       <section className="relative min-h-[90vh] flex flex-col justify-center pt-24 pb-16 px-6 md:px-12">
