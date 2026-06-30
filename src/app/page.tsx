@@ -559,6 +559,16 @@ export default function Home() {
 
       {/* ─── Sub-Product: Punokawan (Powered by GG7) ─────────────────────── */}
       <section className="px-6 md:px-12 py-32 relative overflow-hidden">
+        {/* Cinematic background — Time Travel Crash */}
+        <div className="absolute inset-0 -z-10 opacity-[0.07] pointer-events-none">
+          <Image
+            src="/assets/agents/cinematic-bg.png"
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
         {/* Wayang-inspired SVG ornament left */}
         <div className="absolute -left-20 top-1/4 opacity-10 pointer-events-none -z-10 hidden lg:block">
           <svg width="300" height="500" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -601,6 +611,94 @@ export default function Home() {
             </p>
           </motion.div>
 
+          {/* Team Group Banner */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            className="mb-16 relative rounded-3xl overflow-hidden border border-white/10 h-72 md:h-96"
+          >
+            <Image
+              src="/assets/agents/team-group.png"
+              alt="4 Kekuatan, 1 Tujuan — Punokawan Paham AI"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+            <div className="absolute inset-0 flex flex-col justify-center px-10 md:px-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 bg-primary/20 border border-primary/40 rounded-full w-fit">
+                <span className="text-xs font-bold text-primary uppercase tracking-widest">4 Kekuatan · 1 Tujuan</span>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
+                Pulang dari Hollywood.<br/>
+                <span className="text-primary">Siap bantu Indonesia.</span>
+              </h3>
+              <p className="text-white/70 max-w-md text-sm md:text-base">
+                Punokawan diupgrade oleh GG7 — kini hadir sebagai AI Agent untuk kesehatan, pasar dunia, teknologi, dan bisnis.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Upgrade Narrative — before/after transformation visuals */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+            className="mb-20"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Transform 1 — Sales */}
+              <div className="relative h-56 rounded-2xl overflow-hidden border border-white/10 group">
+                <Image
+                  src="/assets/agents/transform-sales.png"
+                  alt="Marketing Biasa → Sales Smart"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Transform #1</div>
+                  <div className="text-sm font-bold text-white">Marketing Biasa → Sales Smart</div>
+                </div>
+              </div>
+              {/* Transform 2 — Student */}
+              <div className="relative h-56 rounded-2xl overflow-hidden border border-white/10 group">
+                <Image
+                  src="/assets/agents/transform-student.png"
+                  alt="Dari Tulalit → Smart IQ Tinggi"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-1">Transform #2</div>
+                  <div className="text-sm font-bold text-white">Dari Tulalit → Smart IQ Tinggi</div>
+                </div>
+              </div>
+              {/* Transform 3 — Upgrade Narrative */}
+              <div className="relative h-56 rounded-2xl overflow-hidden border border-white/10 group">
+                <Image
+                  src="/assets/agents/upgrade-narrative.png"
+                  alt="Punokawan di-upgrade oleh GG7"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-1">The Mission</div>
+                  <div className="text-sm font-bold text-white">Punokawan di-upgrade oleh GG7</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Semar */}
             <motion.div
@@ -609,20 +707,22 @@ export default function Home() {
               viewport={{ once: true }}
               custom={0}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[460px]"
+              className="group card overflow-hidden flex flex-col h-[520px]"
             >
-              <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/semar.png"
-                    alt="Semar"
+                    alt="Semar — Agent Sehat Waras"
                     fill
-                    className="object-cover object-top mix-blend-screen"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
                 </div>
-                {/* Ornamen shadow */}
+                <div className="absolute top-3 right-3 z-20 bg-amber-500/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
+                  Health · Wellness
+                </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
@@ -630,12 +730,15 @@ export default function Home() {
                   <ShieldCheck size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Semar</h3>
-                <p className="text-sm font-medium text-gold mb-3 tracking-wide">
-                  Sehat Waras · Health & Wellness
+                <p className="text-sm font-medium text-gold mb-2 tracking-wide">
+                  Agent Sehat Waras
                 </p>
-                <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Pemerhati kesehatan dan teman diskusi. Sehat itu pilihan, waras itu tujuan. Siap bantu hidup lebih sehat & tenang.
-                </p>
+                <p className="text-white/40 text-xs italic mb-3">&ldquo;Sehat itu pilihan, waras itu tujuan.&rdquo;</p>
+                <ul className="text-white/60 text-xs space-y-1.5 mb-4 flex-grow">
+                  <li className="flex gap-2"><span className="text-gold">✓</span>Pola makan sehat</li>
+                  <li className="flex gap-2"><span className="text-gold">✓</span>Tidur &amp; pikiran tenang</li>
+                  <li className="flex gap-2"><span className="text-gold">✓</span>Gerak &amp; kebiasaan harian</li>
+                </ul>
                 <Link
                   href="/contact?agent=semar"
                   className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-gold/30 bg-gold/[0.08] text-gold hover:bg-gold hover:text-black transition-all duration-300"
@@ -652,18 +755,21 @@ export default function Home() {
               viewport={{ once: true }}
               custom={1}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[460px]"
+              className="group card overflow-hidden flex flex-col h-[520px]"
             >
-              <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/petruk.png"
-                    alt="Petruk"
+                    alt="Petruk — Agent Pasar Dunia"
                     fill
-                    className="object-cover object-top mix-blend-screen"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
+                </div>
+                <div className="absolute top-3 right-3 z-20 bg-blue-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
+                  Pasar · Market
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
@@ -672,12 +778,15 @@ export default function Home() {
                   <TrendingUp size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Petruk</h3>
-                <p className="text-sm font-medium text-secondary mb-3 tracking-wide">
-                  Pasar Dunia · Market Advisor
+                <p className="text-sm font-medium text-secondary mb-2 tracking-wide">
+                  Agent Pasar Dunia
                 </p>
-                <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Ahli pantau peluang cuan global (saham, emas, dolar). Ngerti pasar biar tidak asal ikut kabar & wawasan ekonomi mumpuni.
-                </p>
+                <p className="text-white/40 text-xs italic mb-3">&ldquo;Ngerti pasar, biar tidak asal ikut kabar.&rdquo;</p>
+                <ul className="text-white/60 text-xs space-y-1.5 mb-4 flex-grow">
+                  <li className="flex gap-2"><span className="text-secondary">✓</span>Pasar saham dasar</li>
+                  <li className="flex gap-2"><span className="text-secondary">✓</span>Emas, dolar &amp; aset aman</li>
+                  <li className="flex gap-2"><span className="text-secondary">✓</span>Ekonomi dunia &amp; geopolitik</li>
+                </ul>
                 <Link
                   href="/contact?agent=petruk"
                   className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-secondary/30 bg-secondary/[0.08] text-secondary hover:bg-secondary hover:text-black transition-all duration-300"
@@ -694,18 +803,21 @@ export default function Home() {
               viewport={{ once: true }}
               custom={2}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[460px]"
+              className="group card overflow-hidden flex flex-col h-[520px]"
             >
-              <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
-                    src="/assets/gareng_anak.webp"
-                    alt="Gareng"
+                    src="/assets/gareng.png"
+                    alt="Gareng — Agent AI Digital"
                     fill
-                    className="object-cover object-top mix-blend-screen"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
+                </div>
+                <div className="absolute top-3 right-3 z-20 bg-amber-400/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
+                  AI · Digital
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
@@ -714,12 +826,15 @@ export default function Home() {
                   <Sparkles size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Gareng</h3>
-                <p className="text-sm font-medium text-primary mb-3 tracking-wide">
-                  AI Digital · Fast Learning
+                <p className="text-sm font-medium text-primary mb-2 tracking-wide">
+                  Agent AI Digital
                 </p>
-                <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Spesialis riset cepat, konten kreatif, dan otomatisasi. Bikin manusia jadi nggak tulalit! Ahli cari info & ide.
-                </p>
+                <p className="text-white/40 text-xs italic mb-3">&ldquo;Saya bukan manusia — tapi bantu manusia jadi tidak tulalit!&rdquo;</p>
+                <ul className="text-white/60 text-xs space-y-1.5 mb-4 flex-grow">
+                  <li className="flex gap-2"><span className="text-primary">✓</span>Cari info &amp; belajar cepat</li>
+                  <li className="flex gap-2"><span className="text-primary">✓</span>Bikin konten &amp; kerja praktis</li>
+                  <li className="flex gap-2"><span className="text-primary">✓</span>Ide kreatif &amp; solusi masalah</li>
+                </ul>
                 <Link
                   href="/contact?agent=gareng"
                   className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-primary/30 bg-primary/[0.08] text-primary hover:bg-primary hover:text-black transition-all duration-300"
@@ -736,18 +851,21 @@ export default function Home() {
               viewport={{ once: true }}
               custom={3}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[460px]"
+              className="group card overflow-hidden flex flex-col h-[520px]"
             >
-              <div className="h-48 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
-                <div className="absolute inset-0 opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/bagong.png"
-                    alt="Bagong"
+                    alt="Bagong — Agent Bisnis"
                     fill
-                    className="object-cover object-top mix-blend-screen"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
+                </div>
+                <div className="absolute top-3 right-3 z-20 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
+                  Bisnis · UMKM
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
@@ -756,12 +874,15 @@ export default function Home() {
                   <Briefcase size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Bagong</h3>
-                <p className="text-sm font-medium text-accent mb-3 tracking-wide">
-                  Bisnis & Strategi · Anti-Fraud
+                <p className="text-sm font-medium text-accent mb-2 tracking-wide">
+                  Agent Bisnis
                 </p>
-                <p className="text-white/50 text-sm leading-relaxed mb-4 flex-grow">
-                  Ahli strategi bisnis, growth, dan cegah penipuan. Cuan boleh, tapi waras harus! Bantu UMKM naik kelas.
-                </p>
+                <p className="text-white/40 text-xs italic mb-3">&ldquo;Cuan boleh, tapi waras harus!&rdquo;</p>
+                <ul className="text-white/60 text-xs space-y-1.5 mb-4 flex-grow">
+                  <li className="flex gap-2"><span className="text-accent">✓</span>Jago jualan &amp; UMKM naik kelas</li>
+                  <li className="flex gap-2"><span className="text-accent">✓</span>Melek keuangan &amp; anti ketipu</li>
+                  <li className="flex gap-2"><span className="text-accent">✓</span>Bisnis online &amp; digital marketing</li>
+                </ul>
                 <Link
                   href="/contact?agent=bagong"
                   className="mt-auto w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider border border-accent/30 bg-accent/[0.08] text-accent hover:bg-accent hover:text-black transition-all duration-300"
