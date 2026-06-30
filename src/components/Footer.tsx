@@ -16,12 +16,11 @@ export default function Footer() {
                 <Image src="/assets/logo.png" alt="Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
               </div>
               <span className="font-bold text-sm">
-                GG7 <span className="text-primary">Universe</span>
+                Nusantara <span className="text-primary">Paham AI</span>
               </span>
             </Link>
             <p className="text-white/40 text-sm leading-relaxed max-w-sm">
-              Platform AI pertama yang menggabungkan kecanggihan Agent GG7 dengan kearifan lokal.
-              Cuan boleh, tapi waras harus. No Tulalit Anymore!
+              Platform AI inklusif untuk seluruh Indonesia. Memadukan teknologi kecerdasan buatan modern dengan nilai-nilai kearifan lokal Nusantara.
             </p>
           </div>
 
@@ -57,10 +56,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            GG7 Universe by GeniusGrowthAI
+            Nusantara Paham AI — Powered by GeniusGrowthAI
           </p>
           <div className="flex items-center gap-4 text-xs text-white/30">
-            <span>🇮🇩 No Tulalit Anymore!</span>
+            <span>🇮🇩 Inklusif · Adaptif · Menyeluruh</span>
           </div>
         </div>
       </div>

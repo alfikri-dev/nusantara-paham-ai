@@ -232,11 +232,11 @@ export default function Home() {
               variants={fadeInUp}
               className="text-display-md md:text-display-lg lg:text-[4.5rem] font-display font-bold leading-[1.05] mb-8 tracking-tight max-w-5xl"
             >
-              Perkenalkan Seri
+              Menyusuri Jejak
               <br />
               <span className="relative inline-block mt-2">
                 <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-primary to-secondary">
-                  Punokawan AI
+                  Kecerdasan Nusantara
                 </span>
                 <span className="absolute -bottom-2 left-0 w-full h-4 bg-primary/20 blur-xl -z-10" />
               </span>
@@ -249,7 +249,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl font-medium leading-relaxed"
             >
-              <strong className="text-white">Pembantu Pintar Level Doktor</strong> Didukung Penuh oleh <span className="text-primary font-semibold">Agent GG7</span>. Empat AI Agent yang mewarisi sifat Punokawan — biar hidup, kerja, dan investasimu tidak <span className="text-accent">Tulalit</span> lagi. <strong className="text-white">No Tulalit Anymore!</strong>
+              <strong className="text-white">Platform AI Pertama</strong> yang menggabungkan kearifan lokal 38 Provinsi Indonesia dengan kecanggihan model kecerdasan buatan modern. <span className="text-primary font-semibold">Inklusif. Adaptif. Menyeluruh.</span>
             </motion.p>
 
             <motion.div
@@ -266,6 +266,15 @@ export default function Home() {
                 <span>Jelajahi Nusantara</span>
                 <span className="group-hover:translate-y-1 transition-transform">
                   ↓
+                </span>
+              </Link>
+              <Link
+                href="/punokawan"
+                className="btn-secondary flex items-center justify-center gap-2 group text-base md:text-lg bg-white/5 border-white/10"
+              >
+                <span>Coba Punokawan AI</span>
+                <span className="group-hover:translate-x-1 transition-transform text-primary font-bold">
+                  →
                 </span>
               </Link>
             </motion.div>
@@ -431,7 +440,7 @@ export default function Home() {
               Investasi AI <span className="text-primary italic">Nusantara</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Paket berlangganan yang dioptimalkan untuk akses Agen Punokawan, analitik data, dan integrasi API (powered by GG Universe).
+              Paket berlangganan untuk akses penuh ke platform Nusantara Paham AI: model terpadu 38 provinsi, analitik data lokal, dan integrasi API universal.
             </p>
           </div>
 
@@ -523,7 +532,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Core Agents (Punokawan) Section ──────────────────────────── */}
+      {/* ─── Sub-Product: Punokawan (Powered by GG7) ─────────────────────── */}
       <section className="px-6 md:px-12 py-32 relative">
         <div className="mx-auto max-w-7xl">
           <motion.div
@@ -535,7 +544,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-primary/10 border border-primary/20 rounded-full">
               <span className="text-xs font-semibold text-primary uppercase tracking-widest">
-                Tim Eksekutor
+                Sub-Product · Powered by Agent GG7
               </span>
             </div>
             <h2 className="text-display-md md:text-display-lg font-display font-bold mb-6">
@@ -545,9 +554,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-              Empat AI Agent yang mewarisi sifat dan peran Punokawan Jawa.
-              Orkestrasi cerdas untuk menyelesaikan tugas kompleks secara
-              paralel.
+              <strong className="text-white/90">Punokawan Paham AI</strong> adalah salah satu lini produk di bawah Nusantara Paham AI — dikhususkan sebagai tim agen eksekutor berkarakter Jawa yang orkestrasinya ditenagai oleh Agent GG7.
             </p>
           </motion.div>
 
@@ -751,10 +758,10 @@ export default function Home() {
                 KARYA <span className="text-accent">•</span>
               </span>
               <span className="flex items-center gap-4 text-white">
-                NO TULALIT <span className="text-primary">•</span>
+                INKLUSIF <span className="text-primary">•</span>
               </span>
               <span className="flex items-center gap-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                GG UNIVERSE
+                NUSANTARA PAHAM AI
               </span>
             </div>
           ))}

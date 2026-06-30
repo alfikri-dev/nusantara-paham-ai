@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GG7 Universe | Nusantara Paham AI",
-  description: "Pembantu Pintar Level Doktor Didukung Penuh oleh Agent GG7. Menyatukan kearifan lokal Nusantara dengan kecerdasan AI modern. No Tulalit Anymore!",
+  title: "Nusantara Paham AI | Inklusif. Adaptif. Menyeluruh.",
+  description: "Platform AI Pertama yang menggabungkan kearifan lokal 38 Provinsi Indonesia dengan kecanggihan model kecerdasan buatan modern. Mendukung inklusivitas teknologi di Nusantara.",
 };
 
 export const viewport: Viewport = {
