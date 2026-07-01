@@ -7,7 +7,7 @@ export default function Fireflies() {
 
   useEffect(() => {
     // Generate fireflies only on client to avoid hydration mismatch
-    const particles = Array.from({ length: 15 }).map((_, i) => ({
+    const particles = Array.from({ length: 8 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
@@ -23,7 +23,7 @@ export default function Fireflies() {
         <motion.div
           key={ff.id}
           className="absolute w-1.5 h-1.5 rounded-full bg-gold/80"
-          style={{ left: ff.left, top: ff.top, filter: "blur(1px)" }}
+          style={{ left: ff.left, top: ff.top, filter: "blur(1px)", willChange: "transform, opacity" }}
           animate={{
             y: [0, -20, 0, 20, 0],
             x: [0, 10, -10, 10, 0],

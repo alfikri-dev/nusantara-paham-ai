@@ -173,11 +173,11 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex flex-col justify-center pt-24 pb-16 px-6 md:px-12">
         <motion.div
           className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10"
-          style={{ y: circle1Y }}
+          style={{ y: circle1Y, willChange: "transform" }}
         />
         <motion.div
           className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[140px] -z-10"
-          style={{ y: circle2Y }}
+          style={{ y: circle2Y, willChange: "transform" }}
         />
 
         {/* Nusantara SVG Background Decorations (Gunungan & Ornamen) */}
@@ -230,7 +230,7 @@ export default function Home() {
 
         <div className="mx-auto max-w-7xl flex flex-col items-center justify-center text-center w-full relative z-10 pt-10">
           <motion.div
-            style={{ y: heroY, opacity: heroOpacity }}
+            style={{ y: heroY, opacity: heroOpacity, willChange: "transform, opacity" }}
             className="flex flex-col items-center"
           >
             <motion.div
@@ -310,7 +310,7 @@ export default function Home() {
       {/* ─── Nusantara Province Map Section ──────────────────────────── */}
       <section
         id="nusantara"
-        className="px-6 md:px-12 py-24 relative bg-black/40 border-y border-white/5 backdrop-blur-xl"
+        className="px-6 md:px-12 py-24 relative bg-black/40 border-y border-white/5 backdrop-blur-sm"
       >
         <div className="mx-auto max-w-7xl">
           {/* Header */}
