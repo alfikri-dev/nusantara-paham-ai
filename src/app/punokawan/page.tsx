@@ -107,7 +107,55 @@ export default function PunokawanPage() {
       <div className="absolute inset-0 parang-pattern opacity-5 pointer-events-none -z-10" />
       <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none -z-10" />
 
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      {/* ─── Side Decorations (Nusantara Ornaments) ────────────────────── */}
+      {/* Left side */}
+      <div className="absolute left-0 top-0 h-full w-32 lg:w-48 pointer-events-none -z-5 hidden xl:block">
+        {/* Vertical batik line */}
+        <div className="absolute left-8 top-[15%] h-[70%] w-px bg-gradient-to-b from-transparent via-primary/15 to-transparent" />
+        <div className="absolute left-10 top-[20%] h-[60%] w-px bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
+        {/* Floating gunungan silhouette */}
+        <svg className="absolute left-2 top-[25%] opacity-10" width="64" height="120" viewBox="0 0 64 120" fill="none">
+          <path d="M32 0 L62 120 L2 120 Z" fill="url(#deco_left)" opacity="0.4" />
+          <circle cx="32" cy="70" r="10" stroke="#f59e0b" strokeWidth="0.5" strokeDasharray="2 3" opacity="0.6" />
+          <circle cx="32" cy="70" r="3" fill="#f59e0b" opacity="0.5" />
+          <defs>
+            <linearGradient id="deco_left" x1="32" y1="0" x2="32" y2="120" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#f59e0b" />
+              <stop offset="1" stopColor="#b45309" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        {/* Floating diamond accents */}
+        <div className="absolute left-4 top-[55%] w-2 h-2 rotate-45 bg-primary/20 rounded-sm" />
+        <div className="absolute left-12 top-[65%] w-1.5 h-1.5 rotate-45 bg-gold/15 rounded-sm" />
+        <div className="absolute left-6 top-[78%] w-1 h-1 rotate-45 bg-secondary/20 rounded-sm" />
+        {/* Parang-inspired curved stroke */}
+        <svg className="absolute left-3 top-[40%] opacity-8" width="40" height="160" viewBox="0 0 40 160" fill="none">
+          <path d="M20 0 C 35 40, 5 80, 20 120 C 30 140, 10 150, 20 160" stroke="#f59e0b" strokeWidth="0.5" opacity="0.15" />
+        </svg>
+      </div>
+
+      {/* Right side */}
+      <div className="absolute right-0 top-0 h-full w-32 lg:w-48 pointer-events-none -z-5 hidden xl:block">
+        {/* Vertical batik line */}
+        <div className="absolute right-8 top-[10%] h-[75%] w-px bg-gradient-to-b from-transparent via-gold/15 to-transparent" />
+        <div className="absolute right-10 top-[20%] h-[55%] w-px bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
+        {/* Floating kris-inspired ornament */}
+        <svg className="absolute right-4 top-[18%] opacity-10" width="32" height="140" viewBox="0 0 32 140" fill="none">
+          <path d="M16 0 L20 40 L12 80 L20 120 L16 140" stroke="#f59e0b" strokeWidth="0.5" opacity="0.3" />
+          <circle cx="16" cy="70" r="6" stroke="#f59e0b" strokeWidth="0.4" strokeDasharray="1.5 2" opacity="0.5" />
+        </svg>
+        {/* Floating diamond accents */}
+        <div className="absolute right-6 top-[35%] w-2 h-2 rotate-45 bg-gold/20 rounded-sm" />
+        <div className="absolute right-14 top-[50%] w-1.5 h-1.5 rotate-45 bg-primary/15 rounded-sm" />
+        <div className="absolute right-8 top-[72%] w-1 h-1 rotate-45 bg-accent/20 rounded-sm" />
+        {/* Parang-inspired curved stroke */}
+        <svg className="absolute right-3 top-[45%] opacity-8" width="40" height="160" viewBox="0 0 40 160" fill="none">
+          <path d="M20 0 C 5 40, 35 80, 20 120 C 10 140, 30 150, 20 160" stroke="#f59e0b" strokeWidth="0.5" opacity="0.15" />
+        </svg>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 md:px-12 relative z-10">
         {/* ─── Vision / Branding Section ─────────────────────────────────── */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-32 items-center">
           <motion.div 
