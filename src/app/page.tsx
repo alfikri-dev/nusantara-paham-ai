@@ -272,8 +272,8 @@ export default function Home() {
                 Perkenalan Seri <span className="text-primary">Punokawan Paham AI</span>
               </h2>
               <p className="text-lg text-white/70 font-medium leading-relaxed">
-                Platform AI inklusif yang memadukan kearifan lokal 38 Provinsi dengan Agen AI Eksekutor. 
-                <br className="hidden md:block" /> Hadirkan asisten cerdas berkarakter Nusantara untuk bisnis dan keseharian Anda.
+                Platform AI inklusif yang berlandaskan <strong className="text-primary font-bold">Karsa, Cipta, Rasa, Karya</strong> — keempat pilar Nusantara yang menjamin kejelasan niat, keaslian hasil, kedalaman empati, dan ketepatan eksekusi.
+                <br className="hidden md:block" /> Tanpa bergantung cloud asing, data tetap di server lokal, agen berkarakter Nusantara siap eksekusi tugas nyata untuk bisnis dan keseharian.
               </p>
             </motion.div>
 
