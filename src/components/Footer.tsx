@@ -46,10 +46,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm text-white/60 mb-4 uppercase tracking-wider">Legal</h4>
             <ul className="space-y-2 text-sm text-white/40">
-              <li><Link href="https://gguniverse.id/#agents" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="https://gguniverse.id/#agents" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link href="https://gguniverse.id/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><a href="mailto:contact@gguniverse.id" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
+            <p className="text-xs text-white/20 mt-3 leading-relaxed">
+              Dikelola di bawah naungan <Link href="https://gguniverse.id" className="hover:text-primary/60 transition-colors">GG Universe</Link> — satu konsorsium ekosistem AI.
+            </p>
           </div>
         </div>
 
