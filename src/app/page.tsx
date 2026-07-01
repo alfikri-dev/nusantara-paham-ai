@@ -707,27 +707,29 @@ export default function Home() {
               viewport={{ once: true }}
               custom={0}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[520px]"
+              className="group card overflow-hidden flex flex-col h-full"
             >
-              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="aspect-[4/5] relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/agents/semar.png"
                     alt="Semar — Agent Sehat Waras"
                     fill
-                    className="object-contain object-top"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
-                </div>
-                <div className="absolute top-3 right-3 z-20 bg-amber-500/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
-                  Health · Wellness
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-gold font-bold text-lg shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                  <ShieldCheck size={24} />
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-gold font-bold text-lg shadow-[0_0_15px_rgba(245,158,11,0.15)] shrink-0">
+                    <ShieldCheck size={24} />
+                  </div>
+                  <span className="bg-amber-500/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest whitespace-nowrap mt-1">
+                    Health · Wellness
+                  </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Semar</h3>
                 <p className="text-sm font-medium text-gold mb-2 tracking-wide">
@@ -755,27 +757,29 @@ export default function Home() {
               viewport={{ once: true }}
               custom={1}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[520px]"
+              className="group card overflow-hidden flex flex-col h-full"
             >
-              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="aspect-[4/5] relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/agents/petruk.png"
                     alt="Petruk — Agent Pasar Dunia"
                     fill
-                    className="object-contain object-top"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
-                </div>
-                <div className="absolute top-3 right-3 z-20 bg-blue-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
-                  Pasar · Market
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-secondary font-bold text-lg shadow-[0_0_15px_rgba(59,130,246,0.15)]">
-                  <TrendingUp size={24} />
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-secondary font-bold text-lg shadow-[0_0_15px_rgba(59,130,246,0.15)] shrink-0">
+                    <TrendingUp size={24} />
+                  </div>
+                  <span className="bg-blue-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest whitespace-nowrap mt-1">
+                    Pasar · Market
+                  </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Petruk</h3>
                 <p className="text-sm font-medium text-secondary mb-2 tracking-wide">
@@ -803,27 +807,29 @@ export default function Home() {
               viewport={{ once: true }}
               custom={2}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[520px]"
+              className="group card overflow-hidden flex flex-col h-full"
             >
-              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="aspect-[4/5] relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/agents/gareng.png"
                     alt="Gareng — Agent AI Digital"
                     fill
-                    className="object-contain object-top"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
-                </div>
-                <div className="absolute top-3 right-3 z-20 bg-amber-400/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
-                  AI · Digital
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-primary font-bold text-lg shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                  <Sparkles size={24} />
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-primary font-bold text-lg shadow-[0_0_15px_rgba(245,158,11,0.15)] shrink-0">
+                    <Sparkles size={24} />
+                  </div>
+                  <span className="bg-amber-400/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest whitespace-nowrap mt-1">
+                    AI · Digital
+                  </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Gareng</h3>
                 <p className="text-sm font-medium text-primary mb-2 tracking-wide">
@@ -851,27 +857,29 @@ export default function Home() {
               viewport={{ once: true }}
               custom={3}
               variants={scaleIn}
-              className="group card overflow-hidden flex flex-col h-[520px]"
+              className="group card overflow-hidden flex flex-col h-full"
             >
-              <div className="h-64 relative overflow-hidden bg-[#1A1A1A]">
+              <div className="aspect-[4/5] relative overflow-hidden bg-[#1A1A1A]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
                     src="/assets/agents/bagong.png"
                     alt="Bagong — Agent Bisnis"
                     fill
-                    className="object-contain object-top"
+                    className="object-cover object-top"
                     sizes="300px"
                   />
-                </div>
-                <div className="absolute top-3 right-3 z-20 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
-                  Bisnis · UMKM
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/40 to-transparent z-20" />
               </div>
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-12">
-                <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center mb-4 text-accent font-bold text-lg shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-                  <Briefcase size={24} />
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-accent font-bold text-lg shadow-[0_0_15px_rgba(16,185,129,0.15)] shrink-0">
+                    <Briefcase size={24} />
+                  </div>
+                  <span className="bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest whitespace-nowrap mt-1">
+                    Bisnis · UMKM
+                  </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">Bagong</h3>
                 <p className="text-sm font-medium text-accent mb-2 tracking-wide">
