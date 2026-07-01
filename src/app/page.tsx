@@ -273,7 +273,7 @@ export default function Home() {
               </h2>
               <p className="text-lg text-white/70 font-medium leading-relaxed">
                 Platform AI inklusif yang berlandaskan <strong className="text-primary font-bold">Karsa, Cipta, Rasa, Karya</strong> — keempat pilar Nusantara yang menjamin kejelasan niat, keaslian hasil, kedalaman empati, dan ketepatan eksekusi.
-                <br className="hidden md:block" /> Tanpa bergantung cloud asing, data tetap di server lokal, agen berkarakter Nusantara siap eksekusi tugas nyata untuk bisnis dan keseharian.
+                <br className="hidden md:block" /> Dengan kecerdasan buatan yang memahami kearifan lokal, setiap agen siap mendampingi dan mengeksekusi tugas nyata untuk bisnis maupun keseharian Anda.
               </p>
             </motion.div>
 
