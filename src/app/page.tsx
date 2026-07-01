@@ -713,10 +713,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
-                    src="/assets/semar.png"
+                    src="/assets/agents/semar.png"
                     alt="Semar — Agent Sehat Waras"
                     fill
-                    className="object-cover object-top"
+                    className="object-contain object-top"
                     sizes="300px"
                   />
                 </div>
@@ -761,10 +761,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
-                    src="/assets/petruk.png"
+                    src="/assets/agents/petruk.png"
                     alt="Petruk — Agent Pasar Dunia"
                     fill
-                    className="object-cover object-top"
+                    className="object-contain object-top"
                     sizes="300px"
                   />
                 </div>
@@ -809,10 +809,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
-                    src="/assets/gareng.png"
+                    src="/assets/agents/gareng.png"
                     alt="Gareng — Agent AI Digital"
                     fill
-                    className="object-cover object-top"
+                    className="object-contain object-top"
                     sizes="300px"
                   />
                 </div>
@@ -857,10 +857,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
                 <div className="absolute inset-0 group-hover:scale-105 transition-all duration-700">
                   <Image
-                    src="/assets/bagong.png"
+                    src="/assets/agents/bagong.png"
                     alt="Bagong — Agent Bisnis"
                     fill
-                    className="object-cover object-top"
+                    className="object-contain object-top"
                     sizes="300px"
                   />
                 </div>

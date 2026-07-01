@@ -44,7 +44,7 @@ const punokawanList = [
     border: "group-hover:border-primary/50",
     shadow: "group-hover:shadow-glow-primary",
     icon: ShieldCheck,
-    tags: ["Pola Makan Sehat", "Tidur & Pikiran Tenang", "Gerak Harian", "No Tulalit"],
+    tags: ["Pola Makan Sehat", "Tidur & Pikiran Tenang", "Gerak Harian"],
     href: "/chat?agent=semar"
   },
   {
@@ -255,7 +255,7 @@ export default function PunokawanPage() {
                     href={agent.href}
                     className="w-full py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-semibold transition-all duration-200 flex items-center justify-center gap-2 group/btn backdrop-blur-sm"
                   >
-                    Mulai Sesi (No Tulalit)
+                    Mulai Sesi
                     <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
